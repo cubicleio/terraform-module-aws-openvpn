@@ -136,3 +136,8 @@ resource "aws_security_group" "openvpn_public" {
     Service = "OpenVPN"
   }
 }
+
+resource "aws_eip" "elastic_ip" {
+  instance = "${aws_instance.openvpn.id}"
+  vpc      = true
+}
