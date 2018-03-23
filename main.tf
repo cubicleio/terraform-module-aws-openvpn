@@ -115,6 +115,18 @@ resource "aws_security_group" "openvpn_public" {
     protocol  = "udp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  ingress {
+    from_port = 443
+    to_port   = 443
+    protocol  = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    from_port = 943
+    to_port   = 943
+    protocol  = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   lifecycle {
     create_before_destroy = true
   }
