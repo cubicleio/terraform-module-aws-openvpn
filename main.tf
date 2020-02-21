@@ -138,6 +138,6 @@ resource "aws_security_group" "openvpn_public" {
 }
 
 resource "aws_eip" "elastic_ip" {
-  instance = aws_instance.openvpn.id
+  instance = aws_instance.openvpn[0].id
   vpc      = true
 }
